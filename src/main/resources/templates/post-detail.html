@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog posts</title>
+    <title>Blog post</title>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
     <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
@@ -12,37 +12,31 @@
 </head>
 <body>
 <main class="container">
-    <h1>Blog posts</h1>
+    <h1>Blog post</h1>
     <table class="u-full-width">
         <thead>
         <tr>
-            <th>Title</th>
             <th>Author</th>
+            <th>Title</th>
             <th>Perex</th>
+            <th>Body</th>
             <th>Published</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="post: ${posts}">
-            <td th:text="${post.title}">title</td>
+        <tr>
             <td th:text="${post.author}">author</td>
+            <td th:text="${post.title}">title</td>
             <td th:utext="${post.perex}">perex</td>
+            <td th:utext="${post.body}">perex</td>
             <td th:text="${#temporals.format(post.published, 'd. MMMM yyyy')}">13 August 2021</td>
             <td>
-                <a th:href="@{/post/{slug}(slug=${post.slug})}" class="button">Read more</a>
+                <a th:href="@{/}" class="button">Back</a>
             </td>
         </tr>
-        <!--        // FIXME stránkování-->
-        <div class="container">
-            <a th:each="pageNumber : ${#numbers.sequence(0, posts.totalPages-1)}"
-               th:href="@{${currentURL}(size=${posts.size}, page=${pageNumber})}"
-               th:text="${pageNumber + 1}"
-               class="page"
-               th:classappend="${pageNumber==posts.number} ? 'active'"></a>
-        </div>
         </tbody>
-
     </table>
+
 </main>
 </body>
 </html>

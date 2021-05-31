@@ -20,8 +20,8 @@ Databáze obsahuje jednu tabulku pojmenovanou `post`. Jak se tabulka vytváří 
 Tabulka s daty je po prvním spuštění aplikace prázdná, pro otestování bude potřeba si nějaké zápisky do tabulky vložit pomocí nástrojů v IntelliJ Idea.
 Připojovací URL, které se zadává při konfiguraci panelu Database v IntelliJ Idea, najdeš v souboru `src/main/resources/application.yaml`.
 
-1. Udělej fork zdrojového repository do svého účtu na GitHubu.
-1. Naklonuj si repository **ze svého účtu** na GitHubu na lokální počítač.
+1. Udělej fork zdrojového cz.czechitas.java2webapps.ukol8.repository do svého účtu na GitHubu.
+1. Naklonuj si cz.czechitas.java2webapps.ukol8.repository **ze svého účtu** na GitHubu na lokální počítač.
 1. Spusť si naklonovanou aplikaci, aby se vytvotřila databáze. V prohlížeči se na stránce [http://localhost:8080/](http://localhost:8080/) zatím bude zobrazovat
    jen chyba, v aplikaci není žádný controller.
 1. Zprovozni si panel Database v IntelliJ Idea, ať si můžeš ověřit, co je v databázi. Připojovací URL, které se zadává při konfiguraci panelu Database v
@@ -36,14 +36,14 @@ Připojovací URL, které se zadává při konfiguraci panelu Database v Intelli
 1. Vytvoř šablony pro obě metody controlleru. Na vzhledu nezáleží :-) Pro vložení HTML kódu z modelu do šablony je nutné místo `th:text` použít `th:utext`. To
    zajistí, že Thymeleaf nebude převádět znaky `<` a `>`, ale vloží je bezezměny do výsledného souboru.
 1. Uprav metodu `list()` v `PostService` tak, aby používala `Pageable` a omezila výsledek na 20 záznamů. Pro vytvoření správného `Pageable` použij statickou
-   metodu `PageRequest.of(0, 20)`. Vytvoř v repository metodu, která bude vracet Page<Post>, bude používat `Pageable` pro omezení počtu záznamů, načte pouze posty,
+   metodu `PageRequest.of(0, 20)`. Vytvoř v cz.czechitas.java2webapps.ukol8.repository metodu, která bude vracet Page<Post>, bude používat `Pageable` pro omezení počtu záznamů, načte pouze posty,
    které mají datum publikace a není v budoucnosti, a seřadí záznamy sestupně podle data publikace. Pro řazení se nebude používat položka `sort` z `Pageable`, ale
-   použije se správný název metody v repository.
+   použije se správný název metody v cz.czechitas.java2webapps.ukol8.repository.
 1. *Bonus*: Můžeš upravit šablonu pro výpis seznamu zápisků tak, aby bylo možné stránkami listovat. Nepoužije se ale číslování stránek, místo toho budou dole
    na stránce jen odkazy „předchozí“ a „další“. Použij k tomu metody `hasPrevious()` a `hasNext()` na rozhraní `Page`.
 1. Zkontroluj, zda vše funguje.    
-1. *Commitni* a *pushnni* změny (výsledný kód) do svého repository na GitHubu.
-1. Vlož odkaz na své repository do tabulky s úkoly na Google Drive.
+1. *Commitni* a *pushnni* změny (výsledný kód) do svého cz.czechitas.java2webapps.ukol8.repository na GitHubu.
+1. Vlož odkaz na své cz.czechitas.java2webapps.ukol8.repository do tabulky s úkoly na Google Drive.
 1. *Super bonus*: Můžeš do aplikace přidat i administraci – stránku, přes kterou bude možné přidávat zápisky, upravovat je a mazat.
 
 ## Odkazy
